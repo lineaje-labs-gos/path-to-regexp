@@ -78,7 +78,7 @@ jobs:
 
       - name: Read version and package
         run: |
-          PACKAGE_FILENAME=$(npm pack --dry-run --json | jq -r '.[0].filename')
+          PACKAGE_FILENAME=$(npm pack --ignore-scripts --dry-run --json | jq -r '.[0].filename')
           echo "PACKAGE_FILENAME=$PACKAGE_FILENAME" >> $GITHUB_ENV
           PACKAGE_NAME=$(npm pkg get name | sed -e 's/"//g')
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
