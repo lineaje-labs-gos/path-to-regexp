@@ -76,12 +76,16 @@ jobs:
       - name: Install dependencies for Node
         run: npm install 2>&1 | tee npm-install.log
 
-      - name: Read version and package
+      - name: Read version and package details
         run: |
           PACKAGE_NAME=$(npm pkg get name | sed -e 's/"//g')
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
           PACKAGE_FILENAME=${PACKAGE_NAME}-${{  github.event.inputs.release_version }}".tgz"
           echo "PACKAGE_FILENAME=$PACKAGE_FILENAME" >> $GITHUB_ENV
+
+      - name: Create package
+        run: |
+          npm pack --pack-destination ./
 
       - name: Import GPG private key
         run: |
