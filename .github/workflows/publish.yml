@@ -80,7 +80,8 @@ jobs:
         run: |
           PACKAGE_NAME=$(npm pkg get name | sed -e 's/"//g')
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
-          PACKAGE_FILENAME=${PACKAGE_NAME}-${{  github.event.inputs.release_version }}".tgz"
+          PACKAGE_VERSION=$(npm pkg get version | sed -e 's/"//g')
+          PACKAGE_FILENAME=${PACKAGE_NAME}-${PACKAGE_VERSION}".tgz"
           echo "PACKAGE_FILENAME=$PACKAGE_FILENAME" >> $GITHUB_ENV
 
       - name: Create package
