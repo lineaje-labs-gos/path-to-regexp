@@ -1,7 +1,7 @@
 {
   "name": "path-to-regexp",
   "description": "Express style path to RegExp utility",
-  "version": "0.1.12",
+  "version": "0.1.12-lineaje-01",
   "files": [
     "index.js",
     "LICENSE"
@@ -19,9 +19,15 @@
     }
   },
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Lineaje DepFixer",
+      "email": "221268890+Lineaje-DepFixer@users.noreply.github.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pillarjs/path-to-regexp.git"
+    "url": "https://github.com/lineaje-labs-gos/path-to-regexp"
   },
   "devDependencies": {
     "mocha": "^1.17.1",
